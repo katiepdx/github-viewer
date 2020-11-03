@@ -3,7 +3,22 @@
 exports[`App component renders App 1`] = `
 <DocumentFragment>
   <h1>
-    Hello World
+    Github Viewer
   </h1>
+  <div>
+    <label
+      for="ghUser"
+    >
+      Search
+    </label>
+    <input
+      id="ghUser"
+      name="ghUser"
+      type="text"
+    />
+    <button>
+      Go!
+    </button>
+  </div>
 </DocumentFragment>
 `;
