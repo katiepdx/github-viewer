@@ -1,16 +1,21 @@
 // input - search ghUser
 
 import React from 'react'
-import getUserInfo from '../../../services/github-api'
+import { useDispatch } from 'react-redux'
+import { fetchUser } from '../../../actions/ghUserActions'
+import { getUserInfo } from '../../../services/github-api'
 
 export const GithubUser = () => {
+  const dispatch = useDispatch();
 
   // handleClick to trigger dispatch
   const handleClick = async () => {
     console.log('GithubUser click')
 
-    const user = await getUserInfo()
-    await console.log(user)
+    // start action
+    const user = await dispatch(fetchUser())
+
+    await console.log(user, 'STATE')
   }
 
   return (
