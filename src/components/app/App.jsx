@@ -1,5 +1,5 @@
 import React from 'react';
-import { GithubUser } from './ghUser/GithubUser';
+import { GithubUser } from '../ghUser/GithubUser';
 
 export default function App() {
   return (

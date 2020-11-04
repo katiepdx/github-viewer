@@ -3,8 +3,9 @@
 import React from 'react'
 // useSelector to get a specific piece of state
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchUser, setSearch } from '../../../actions/ghUserActions'
-import Results from '../../results/Results'
+import { fetchUser, setSearch } from '../../actions/ghUserActions'
+import Results from '../results/Results'
+import Search from '../search/Search'
 
 export const GithubUser = () => {
   const dispatch = useDispatch();
@@ -29,20 +30,10 @@ export const GithubUser = () => {
   }
 
   if (username === '') return (
-    <>
-      <div>
-        <label htmlFor="ghUser">Search</label>
-        <input
-          id="ghUser"
-          type="text"
-          name="ghUser"
-          onChange={handleChange}
-        />
-
-        <button onClick={handleClick}>Go!</button>
-      </div>
-    </>
-  )
+    <Search
+      onChange={handleChange}
+      onClick={handleClick}
+    />)
 
   else return (
     // pass props
@@ -54,5 +45,4 @@ export const GithubUser = () => {
       repos={repos}
     />
   )
-
 }

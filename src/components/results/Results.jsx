@@ -8,7 +8,7 @@ const Results = ({ username, followers, following, link, repos }) => {
       <p>Followers: {followers}</p>
       <p>Following: {following}</p>
       <p>Github Link: <a href={link} target="_blank">Profile Link</a></p>
-      <p>Repos: {JSON.stringify(repos)}</p>
+      <div>Repos: {JSON.stringify(repos)}</div>
     </div>
   )
 }

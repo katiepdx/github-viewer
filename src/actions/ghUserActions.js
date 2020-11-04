@@ -19,6 +19,5 @@ export const fetchUser = (search) => dispatch => {
   return getUserInfo(search)
     .then(user => {
       dispatch(setUser(user))
-      console.log(user, 'IN ACTIONS FILE')
     })
 }
