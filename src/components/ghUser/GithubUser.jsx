@@ -1,11 +1,10 @@
-// input - search ghUser
-
 import React from 'react'
 // useSelector to get a specific piece of state
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUser, setSearch } from '../../actions/ghUserActions'
 import Results from '../results/Results'
 import Search from '../search/Search'
+import styles from '../app/App.css'
 
 export const GithubUser = () => {
   const dispatch = useDispatch();
@@ -30,25 +29,36 @@ export const GithubUser = () => {
   }
 
   if (username === '') return (
-    <Search
-      onChange={handleChange}
-      onClick={handleClick}
-    />)
-
-  else return (
-    <>
+    <section className={styles.searchWrapper}>
+      <div></div>
       <Search
         onChange={handleChange}
         onClick={handleClick}
       />
+      <div></div>
+    </section>
+  )
+
+  else return (
+    <>
+      <section className={styles.searchWrapper}>
+        <div></div>
+        <Search
+          onChange={handleChange}
+          onClick={handleClick}
+        />
+        <div></div>
+      </section>
       {/* pass props */}
-      <Results
-        username={username}
-        followers={followers}
-        following={following}
-        link={link}
-        repos={repos}
-      />
+      <section>
+        <Results
+          username={username}
+          followers={followers}
+          following={following}
+          link={link}
+          repos={repos}
+        />
+      </section>
     </>
   )
 }

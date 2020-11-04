@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactJson from 'react-json-view'
+import styles from '../app/App.css'
 
 const Results = ({ username, followers, following, link, repos }) => {
   return (
     <div>
-      <h2>User: {username} </h2>
-      <p>Followers: {followers}</p>
-      <p>Following: {following}</p>
-      <p>Github Link: <a href={link} target="_blank">Profile Link</a></p>
-      <div>Repos: <ReactJson src={repos} theme="pop"/></div>
+      <section className={styles.userInfoResults}>
+        <p>User: {username} </p>
+        <p>Followers: {followers}</p>
+        <p>Following: {following}</p>
+        <p>Github: <a href={link} target="_blank"><img src="src/assets/github_icon.png" height="20px" width="20px" /></a></p>
+      </section>
+      <div><span className={styles.repos}>Repos:</span> <ReactJson src={repos} theme="solarized" /></div>
     </div>
   )
 }

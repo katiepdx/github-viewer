@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from '../app/App.css'
 
 const Search = ({ onChange, onClick }) => {
   return (
     <>
-      <div>
+      <div className={styles.searchBar}>
         <label htmlFor="ghUser">Search</label>
         <input
           id="ghUser"

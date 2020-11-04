@@ -2,7 +2,9 @@
 
 exports[`<Search/> renders the search bar and go button 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="searchBar"
+  >
     <label
       for="ghUser"
     >
