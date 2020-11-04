@@ -4,7 +4,6 @@ import React from 'react'
 // useSelector to get a specific piece of state
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUser } from '../../../actions/ghUserActions'
-import { getUserInfo } from '../../../services/github-api'
 
 export const GithubUser = () => {
   const dispatch = useDispatch();
