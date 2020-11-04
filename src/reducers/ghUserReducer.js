@@ -17,14 +17,14 @@ const reducer = ((state = initialState, action) => {
   // switch cases are by ghUserActions type
   switch (action.type) {
     case SET_USER:
-      // set state using action payload - res from api
+      // set state using action payload - response from api
       return {
         ...state,
-        username: action.payload.login,
-        followers: action.payload.followers,
-        following: action.payload.following,
-        link: action.payload.html_url,
-        repos: action.payload.repos_url
+        username: action.payload.user.login,
+        followers: action.payload.user.followers,
+        following: action.payload.user.following,
+        link: action.payload.user.html_url,
+        repos: action.payload.repos
       }
     case SET_SEARCH:
       // set users search to state - will use this to fetch from api

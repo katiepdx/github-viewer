@@ -4,6 +4,7 @@ import React from 'react'
 // useSelector to get a specific piece of state
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUser, setSearch } from '../../../actions/ghUserActions'
+import Results from '../../results/Results'
 
 export const GithubUser = () => {
   const dispatch = useDispatch();
@@ -44,13 +45,14 @@ export const GithubUser = () => {
   )
 
   else return (
-    <div>
-      <h2>User: {username} </h2>
-      <p>Followers: {followers}</p>
-      <p>Following: {following}</p>
-      <p>Github Link: <a href={link} target="_blank">Profile Link</a></p>
-      <p>Repos: <a href={repos} target="_blank">Repos Link</a></p>
-    </div>
+    // pass props
+    <Results
+      username={username}
+      followers={followers}
+      following={following}
+      link={link}
+      repos={repos}
+    />
   )
 
 }
