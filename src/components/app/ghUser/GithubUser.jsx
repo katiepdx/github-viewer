@@ -7,31 +7,33 @@ import { fetchUser, setSearch } from '../../../actions/ghUserActions'
 
 export const GithubUser = () => {
   const dispatch = useDispatch();
+  // get user search from state
+  const search = useSelector(state => state.search)
 
   const handleChange = ({ target }) => {
-    dispatch(setSearch({ search: target.value}))
-}
+    dispatch(setSearch({ search: target.value }))
+  }
 
-// handleClick to trigger dispatch
-const handleClick = async () => {
-  console.log('GithubUser click')
+  // handleClick to trigger dispatch
+  const handleClick = async () => {
+    console.log('GithubUser click')
 
-  // start action
-  await dispatch(fetchUser())
+    // start action
+    await dispatch(fetchUser(search))
 
-}
+  }
 
-return (
-  <div>
-    <label htmlFor="ghUser">Search</label>
-    <input
-      id="ghUser"
-      type="text"
-      name="ghUser"
-      onChange={handleChange}
-    />
+  return (
+    <div>
+      <label htmlFor="ghUser">Search</label>
+      <input
+        id="ghUser"
+        type="text"
+        name="ghUser"
+        onChange={handleChange}
+      />
 
-    <button onClick={handleClick}>Go!</button>
-  </div>
-)
+      <button onClick={handleClick}>Go!</button>
+    </div>
+  )
 }

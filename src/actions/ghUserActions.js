@@ -15,8 +15,8 @@ export const setSearch = userSearch => ({
 })
 
 // dispatch calls the action
-export const fetchUser = () => dispatch => {
-  return getUserInfo()
+export const fetchUser = (search) => dispatch => {
+  return getUserInfo(search)
     .then(user => {
       dispatch(setUser(user))
       console.log(user, 'IN ACTIONS FILE')
