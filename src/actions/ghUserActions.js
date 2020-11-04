@@ -11,5 +11,8 @@ export const setUser = userJson => ({
 // dispatch calls the action
 export const fetchUser = () => dispatch => {
   return getUserInfo()
-    .then(dispatch(setUser(dispatch)))
+    .then(user => {
+      dispatch(setUser(user))
+      console.log(user, 'IN ACTIONS FILE')
+    })
 }

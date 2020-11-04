@@ -17,10 +17,13 @@ const reducer = ((state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
       // set state using action payload - res from api
-      console.log(action.payload)
-      return (
-        state
-      )
+      return {
+        username: action.payload.username,
+        followers: action.payload.followers,
+        following: action.payload.following,
+        link: action.payload.link,
+        repos: action.payload.repos
+      }
     default:
       return state
   }

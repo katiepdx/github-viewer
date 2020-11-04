@@ -1,7 +1,8 @@
 // input - search ghUser
 
 import React from 'react'
-import { useDispatch } from 'react-redux'
+// useSelector to get a specific piece of state
+import { useDispatch, useSelector } from 'react-redux'
 import { fetchUser } from '../../../actions/ghUserActions'
 import { getUserInfo } from '../../../services/github-api'
 
@@ -13,9 +14,8 @@ export const GithubUser = () => {
     console.log('GithubUser click')
 
     // start action
-    const user = await dispatch(fetchUser())
+    await dispatch(fetchUser())
 
-    await console.log(user, 'STATE')
   }
 
   return (
