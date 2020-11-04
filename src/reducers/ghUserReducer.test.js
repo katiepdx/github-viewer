@@ -8,17 +8,17 @@ describe('tests ghUserReducer', () => {
       followers: 0,
       following: 0,
       link: '',
-      repos: []
+      repos: ''
     }
 
     // info to update state with
     const action = setUser(
       {
-        username: 'KatiePDX',
-        followers: 8,
-        following: 8,
-        link: 'https://github.com/katiepdx',
-        repos: []
+        username: 'github',
+        followers: 0,
+        following: 0,
+        link: 'https://github.com/github',
+        repos: 'https://api.github.com/users/github/repos'
       }
     )
 
@@ -26,11 +26,11 @@ describe('tests ghUserReducer', () => {
     const newState = reducer(state, action)
 
     expect(newState).toEqual({
-      username: 'KatiePDX',
-      followers: 8,
-      following: 8,
-      link: 'https://github.com/katiepdx',
-      repos: []
+      username: 'github',
+      followers: 0,
+      following: 0,
+      link: 'https://github.com/github',
+      repos: 'https://api.github.com/users/github/repos'
     })
   })
 
@@ -41,24 +41,24 @@ describe('tests ghUserReducer', () => {
       followers: 0,
       following: 0,
       link: '',
-      repos: []
+      repos: ''
     }
 
     // info to update state with
     const action = setSearch(
-      {search: 'KatiePDX'}
+      { search: 'github' }
     )
 
     // update state using reducer
     const newState = reducer(state, action)
 
     expect(newState).toEqual({
-      search: 'KatiePDX',
+      search: 'github',
       username: '',
       followers: 0,
       following: 0,
       link: '',
-      repos: []
+      repos: ''
     })
   })
 })

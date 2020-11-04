@@ -1,7 +1,9 @@
 // github api fetch - will name in username from search bar
 
 export const getUserInfo = async (search = 'github') => {
-  const res = await fetch(`https://api.github.com/users/${search}`)
+  // const res = await fetch(`https://api.github.com/users/${search}`)
+
+  const res = await fetch(`https://api.github.com/users/github`)
 
   if (!res.ok) return ('failed to fetch from api')
 

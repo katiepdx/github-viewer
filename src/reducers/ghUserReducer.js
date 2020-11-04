@@ -20,11 +20,11 @@ const reducer = ((state = initialState, action) => {
       // set state using action payload - res from api
       return {
         ...state,
-        username: action.payload.username,
+        username: action.payload.login,
         followers: action.payload.followers,
         following: action.payload.following,
-        link: action.payload.link,
-        repos: action.payload.repos
+        link: action.payload.html_url,
+        repos: action.payload.repos_url
       }
     case SET_SEARCH:
       // set users search to state - will use this to fetch from api
