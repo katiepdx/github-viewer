@@ -36,13 +36,19 @@ export const GithubUser = () => {
     />)
 
   else return (
-    // pass props
-    <Results
-      username={username}
-      followers={followers}
-      following={following}
-      link={link}
-      repos={repos}
-    />
+    <>
+      <Search
+        onChange={handleChange}
+        onClick={handleClick}
+      />
+      {/* pass props */}
+      <Results
+        username={username}
+        followers={followers}
+        following={following}
+        link={link}
+        repos={repos}
+      />
+    </>
   )
 }
