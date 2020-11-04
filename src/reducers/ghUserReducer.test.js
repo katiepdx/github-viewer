@@ -12,13 +12,14 @@ describe('tests ghUserReducer', () => {
     }
 
     // info to update state with
+    // names must match github api names
     const action = setUser(
       {
-        username: 'github',
+        login: 'github',
         followers: 0,
         following: 0,
-        link: 'https://github.com/github',
-        repos: 'https://api.github.com/users/github/repos'
+        html_url: 'https://github.com/github',
+        repos_url: 'https://api.github.com/users/github/repos'
       }
     )
 
@@ -37,7 +38,7 @@ describe('tests ghUserReducer', () => {
   it('updates user search in state using SET_SEARCH', () => {
     const state = {
       search: '',
-      username: '',
+      login: '',
       followers: 0,
       following: 0,
       link: '',
@@ -54,7 +55,7 @@ describe('tests ghUserReducer', () => {
 
     expect(newState).toEqual({
       search: 'github',
-      username: '',
+      login: '',
       followers: 0,
       following: 0,
       link: '',
